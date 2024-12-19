@@ -6,11 +6,6 @@ import {genkit} from 'genkit';
 
 const router = express.Router();
 
-// Khởi tạo Google Generative AI API
-const genAI = new GoogleGenerativeAI({
-    apiKey: "AIzaSyCVPMpzv9dLz_Z0y219hHMOb0SKYCIVIi8", // API Key
-});
-
 // API "Xem Quẻ Đầu Năm"
 router.post('/', async (req, res) => {
     const {question, birthday} = req.body; // Lấy câu hỏi và ngày sinh từ client

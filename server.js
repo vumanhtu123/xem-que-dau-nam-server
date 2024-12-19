@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import dotenv from 'dotenv';  // Load biến môi trường
-import app from '../app.js';  // Import app (đảm bảo app hỗ trợ ES Module)
+import app from './app.js';  // Import app (đảm bảo app hỗ trợ ES Module)
 import debug from 'debug';  // Debug
 import http from 'http';  // HTTP
 
@@ -12,7 +12,7 @@ dotenv.config();
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-// Tạo server
+// Tạo server.js
 const server = http.createServer(app);
 
 // Lắng nghe các sự kiện
@@ -28,7 +28,7 @@ function normalizePort(val) {
   return false;
 }
 
-// Xử lý lỗi server
+// Xử lý lỗi server.js
 function onError(error) {
   if (error.syscall !== 'listen') throw error;
   const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
@@ -46,7 +46,7 @@ function onError(error) {
   }
 }
 
-// Khi server bắt đầu lắng nghe
+// Khi server.js bắt đầu lắng nghe
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
