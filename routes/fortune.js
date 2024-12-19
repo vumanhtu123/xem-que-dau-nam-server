@@ -20,8 +20,6 @@ router.post('/', async (req, res) => {
         const result = {};
         const cleanedText = cleanText(text);
 
-        console.log(cleanedText)
-
         // Trích xuất Số quẻ
         const hexagramNumberMatch = cleanedText.match(/Số quẻ:\s*(\d+)/);
         result.hexagramNumber = hexagramNumberMatch ? parseInt(hexagramNumberMatch[1], 10) : null;
